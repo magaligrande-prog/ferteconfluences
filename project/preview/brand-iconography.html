@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #FAFAFA; padding: 20px 24px; }
+  .grid { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .icon-group { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .icon-row { display: flex; gap: 8px; align-items: center; }
+  .icon-box {
+    width: 52px; height: 52px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .icon-box.dark { background: #033059; }
+  .icon-box.light { background: white; border: 1px solid #E3E3E3; }
+  .icon-box.gray  { background: #575757; }
+  .icon-label { font-size: 10px; font-weight: 500; color: #AAAAAA; text-align: center; }
+  .divider { width: 1px; height: 60px; background: #E3E3E3; }
+  .section-label { font-size: 10px; font-weight: 700; color: #033059; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <!-- Anchor icon -->
+  <div class="icon-group">
+    <div class="section-label">Anchor / Logo mark</div>
+    <div class="icon-row">
+      <div class="icon-box dark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="7" r="2.5"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="9" x2="12" y2="20"/><path d="M6 20 Q12 15 18 20"/><line x1="6" y1="20" x2="3" y2="18"/><line x1="18" y1="20" x2="21" y2="18"/><line x1="7" y1="13" x2="17" y2="13"/></svg>
+      </div>
+      <div class="icon-box light">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#033059" stroke-width="1.8"><circle cx="12" cy="7" r="2.5"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="9" x2="12" y2="20"/><path d="M6 20 Q12 15 18 20"/><line x1="6" y1="20" x2="3" y2="18"/><line x1="18" y1="20" x2="21" y2="18"/><line x1="7" y1="13" x2="17" y2="13"/></svg>
+      </div>
+    </div>
+    <div class="icon-label">24px / 28px</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Navigation arrows -->
+  <div class="icon-group">
+    <div class="section-label">Arrow navigation</div>
+    <div class="icon-row">
+      <div class="icon-box dark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="20" y1="12" x2="4" y2="12"/><polyline points="10 6 4 12 10 18"/></svg>
+      </div>
+      <div class="icon-box dark">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+      </div>
+      <div class="icon-box light">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#575757" stroke-width="2"><line x1="20" y1="12" x2="4" y2="12"/><polyline points="10 6 4 12 10 18"/></svg>
+      </div>
+    </div>
+    <div class="icon-label">56px circle container</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- UI icons -->
+  <div class="icon-group">
+    <div class="section-label">UI Icons</div>
+    <div class="icon-row">
+      <div class="icon-box light">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#033059" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+      <div class="icon-box light">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#033059" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div class="icon-box light">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#033059" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      </div>
+      <div class="icon-box light">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#033059" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="icon-box light">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#033059" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+    </div>
+    <div class="icon-label">Search · Like · Share · Location · Mail</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Chevrons -->
+  <div class="icon-group">
+    <div class="section-label">Chevrons / Nav</div>
+    <div class="icon-row">
+      <div class="icon-box light">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AAAAAA" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="icon-box dark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+    <div class="icon-label">24px inline</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #FAFAFA; padding: 20px; }
+  .row { display: flex; gap: 10px; }
+  .chip { flex: 1; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 6px; min-height: 90px; }
+  .chip-label { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.6; }
+  .chip-title { font-size: 14px; font-weight: 600; }
+  .chip-sub { font-size: 11px; font-weight: 500; opacity: 0.75; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="chip" style="background:#033059; color:white;">
+    <div class="chip-label">Background</div>
+    <div class="chip-title">Navy — Fond sombre</div>
+    <div class="chip-sub">Sections vision, panels éditoriaux</div>
+  </div>
+  <div class="chip" style="background:#F4A700; color:#033059;">
+    <div class="chip-label">Accent</div>
+    <div class="chip-title">Or — Hover / CTA</div>
+    <div class="chip-sub">Bordures hover, glow, filtres photo</div>
+  </div>
+  <div class="chip" style="background:#D3E7F7; color:#033059;">
+    <div class="chip-label">Tint</div>
+    <div class="chip-title">Bleu ciel — Fond léger</div>
+    <div class="chip-sub">Tags, surfaces claires</div>
+  </div>
+  <div class="chip" style="background:white; color:#575757; border:1px solid #E3E3E3;">
+    <div class="chip-label">Overlay</div>
+    <div class="chip-title">Blanc — Fond neutre</div>
+    <div class="chip-sub">Cartes, surfaces contenu</div>
+  </div>
+</div>
+</body>
+</html>

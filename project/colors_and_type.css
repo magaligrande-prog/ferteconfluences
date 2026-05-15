@@ -1,0 +1,249 @@
+/*
+ * Ferté Confluences — Design System Tokens
+ * colors_and_type.css
+ *
+ * Font notes:
+ *   - Agenda: Commercial license via Adobe Fonts (https://fonts.adobe.com/fonts/agenda)
+ *     ⚠️  Not available on Google Fonts. Substituted with "Nunito" (Google Fonts) in this
+ *         design system — closest free match with similar rounded, humanist sans-serif forms.
+ *         Replace with the real Agenda face when deploying to production.
+ *   - Montserrat: Free via Google Fonts — https://fonts.google.com/specimen/Montserrat
+ *
+ * Import both via Google Fonts:
+ * @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
+ */
+
+/* ─── Base Color Palette ─────────────────────────────────────────── */
+:root {
+  /* Primary */
+  --fc-navy:          #033059;   /* Bleu marine — primary brand color */
+  --fc-navy-80:       rgba(3,48,89,0.80);
+  --fc-navy-45:       rgba(3,48,89,0.45);
+  --fc-navy-0:        rgba(3,48,89,0.00);
+
+  /* Neutral / White */
+  --fc-white:         #FFFFFF;
+  --fc-off-white:     #FAFAFA;
+  --fc-bg-light:      #F5F5F5;
+
+  /* Secondary — Sky Blue */
+  --fc-sky:           #D3E7F7;
+  --fc-sky-mid:       #E9F3FB;
+
+  /* Accent — Sunshine Yellow */
+  --fc-gold:          #F4A700;
+  --fc-gold-dark:     #D99500;
+  --fc-gold-deep:     #5A3D00;
+  --fc-gold-30:       rgba(244,167,0,0.30);
+  --fc-gold-glow:     rgba(244,167,0,0.50);
+  --fc-gold-tint:     rgba(244,167,0,0.06);
+  --fc-gold-overlay:  rgba(244,167,0,0.08);
+
+  /* Grays */
+  --fc-gray-dark:     #575757;   /* Body text */
+  --fc-gray-mid:      #717680;
+  --fc-gray-muted:    #AAAAAA;
+  --fc-gray-border:   #E3E3E3;
+  --fc-gray-light:    #F1F1F1;
+  --fc-gray-stroke:   #B7B7B7;
+
+  /* Functional */
+  --fc-error:         #FF0000;
+
+  /* ─── Semantic Color Assignments ──────────────────────────────── */
+  --color-bg:                var(--fc-white);
+  --color-bg-subtle:         var(--fc-off-white);
+  --color-bg-dark:           var(--fc-navy);
+  --color-bg-light:          var(--fc-sky);
+
+  --color-fg-primary:        var(--fc-navy);
+  --color-fg-body:           var(--fc-gray-dark);
+  --color-fg-muted:          var(--fc-gray-muted);
+  --color-fg-on-dark:        var(--fc-white);
+
+  --color-accent:            var(--fc-gold);
+  --color-accent-dark:       var(--fc-gold-dark);
+  --color-accent-glow:       var(--fc-gold-30);
+
+  --color-border:            var(--fc-gray-border);
+  --color-border-dark:       var(--fc-navy);
+  --color-border-light:      var(--fc-white);
+
+  /* ─── Typography Families ──────────────────────────────────────── */
+  --font-display:     'agenda', 'Nunito', sans-serif;  /* Adobe Fonts: add kit link in HTML */  /* ⚠️ Agenda substitute */
+  --font-body:        'Montserrat', sans-serif;
+
+  /* ─── Font Weights ─────────────────────────────────────────────── */
+  --fw-regular:       400;
+  --fw-medium:        500;
+  --fw-semibold:      600;
+  --fw-bold:          700;
+
+  /* ─── Type Scale ───────────────────────────────────────────────── */
+
+  /* Display / Hero — Agenda SemiBold Italic */
+  --text-hero-size:       100px;
+  --text-hero-weight:     var(--fw-bold);
+  --text-hero-style:      italic;
+  --text-hero-family:     var(--font-display);
+  --text-hero-lh:         1.0;
+  --text-hero-ls:         -0.020em;
+
+  /* H1 — Agenda Medium */
+  --text-h1-size:         56px;
+  --text-h1-weight:       var(--fw-medium);
+  --text-h1-family:       var(--font-display);
+  --text-h1-lh:           1.0;
+
+  /* H2 — Agenda Medium (section headers) */
+  --text-h2-size:         48px;
+  --text-h2-weight:       var(--fw-medium);
+  --text-h2-family:       var(--font-display);
+  --text-h2-lh:           1.0;
+
+  /* H3 — Montserrat SemiBold */
+  --text-h3-size:         32px;
+  --text-h3-weight:       var(--fw-semibold);
+  --text-h3-family:       var(--font-body);
+  --text-h3-lh:           1.1;
+
+  /* H4 — Montserrat SemiBold */
+  --text-h4-size:         24px;
+  --text-h4-weight:       var(--fw-semibold);
+  --text-h4-family:       var(--font-body);
+  --text-h4-lh:           1.1;
+
+  /* H5 / Card title — Montserrat Medium */
+  --text-h5-size:         20px;
+  --text-h5-weight:       var(--fw-medium);
+  --text-h5-family:       var(--font-body);
+  --text-h5-lh:           1.2;
+
+  /* Subheading — Montserrat Medium */
+  --text-sub-size:        38px;
+  --text-sub-weight:      var(--fw-medium);
+  --text-sub-family:      var(--font-body);
+  --text-sub-lh:          1.0;
+  --text-sub-ls:          -0.010em;
+
+  /* Body — Montserrat Medium */
+  --text-body-size:       16px;
+  --text-body-weight:     var(--fw-medium);
+  --text-body-family:     var(--font-body);
+  --text-body-lh:         1.75;
+
+  /* Body Large — Montserrat Medium */
+  --text-body-lg-size:    18px;
+  --text-body-lg-weight:  var(--fw-medium);
+  --text-body-lg-lh:      1.6;
+
+  /* Caption / Label — Montserrat Medium */
+  --text-caption-size:    14px;
+  --text-caption-weight:  var(--fw-medium);
+  --text-caption-family:  var(--font-body);
+  --text-caption-lh:      1.2;
+
+  /* Nav / Button — Montserrat Medium */
+  --text-nav-size:        18px;
+  --text-nav-weight:      var(--fw-medium);
+  --text-nav-family:      var(--font-body);
+
+  /* Button — Montserrat Medium */
+  --text-btn-size:        16px;
+  --text-btn-weight:      var(--fw-medium);
+  --text-btn-family:      var(--font-body);
+
+  /* Baseline (all caps) — Montserrat Bold */
+  --text-baseline-size:   14px;
+  --text-baseline-weight: var(--fw-bold);
+  --text-baseline-ls:     0.040em;
+  --text-baseline-family: var(--font-body);
+
+  /* ─── Spacing Scale ────────────────────────────────────────────── */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   16px;
+  --space-4:   24px;
+  --space-5:   32px;
+  --space-6:   48px;
+  --space-7:   56px;
+  --space-8:   64px;
+  --space-9:   100px;
+
+  /* ─── Border Radius ────────────────────────────────────────────── */
+  --radius-sm:     8px;
+  --radius-md:     24px;    /* Standard cards */
+  --radius-lg:     32px;    /* Large feature cards */
+  --radius-pill:   48px;    /* Buttons, tags */
+  --radius-circle: 50%;
+
+  /* ─── Shadows ──────────────────────────────────────────────────── */
+  --shadow-text-protection:  0px 0px 24px 0px rgba(106,72,0,0.50);
+  --shadow-hover-gold:       0px 0px 32px 0px rgba(244,167,0,0.30);
+  --shadow-overlay-md:       0px 4px 24px 0px rgba(3,48,89,0.15);
+
+  /* ─── Transitions ──────────────────────────────────────────────── */
+  --transition-base:   all 0.25s ease;
+  --transition-fast:   all 0.15s ease;
+}
+
+/* ─── Semantic Element Styles ──────────────────────────────────── */
+
+h1 {
+  font-family: var(--text-h1-family);
+  font-weight: var(--text-h1-weight);
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-lh);
+  color: var(--color-fg-primary);
+}
+
+h2 {
+  font-family: var(--text-h2-family);
+  font-weight: var(--text-h2-weight);
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-lh);
+  color: var(--color-fg-primary);
+}
+
+h3 {
+  font-family: var(--text-h3-family);
+  font-weight: var(--text-h3-weight);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-lh);
+  color: var(--color-fg-primary);
+}
+
+h4 {
+  font-family: var(--text-h4-family);
+  font-weight: var(--text-h4-weight);
+  font-size: var(--text-h4-size);
+  line-height: var(--text-h4-lh);
+  color: var(--color-fg-primary);
+}
+
+p {
+  font-family: var(--font-body);
+  font-weight: var(--fw-medium);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lh);
+  color: var(--color-fg-body);
+}
+
+a {
+  color: var(--color-fg-primary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+code, pre {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  background: var(--fc-sky-mid);
+  color: var(--fc-navy);
+  border-radius: 4px;
+  padding: 2px 6px;
+}

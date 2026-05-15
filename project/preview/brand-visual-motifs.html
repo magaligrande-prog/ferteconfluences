@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #FAFAFA; display: flex; gap: 12px; padding: 20px; height: 300px; overflow: hidden; }
+
+  .panel { border-radius: 16px; overflow: hidden; position: relative; flex: 1; }
+
+  /* Hero panel */
+  .hero-panel {
+    background: url('../assets/images/hero-port.jpg') center/cover no-repeat;
+    flex: 2;
+  }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgb(3,48,89) 0%, rgba(3,48,89,0) 60%); }
+  .hero-text { position: absolute; top: 20px; left: 20px; }
+  .hero-text h2 { font-family:'agenda', 'Nunito', sans-serif; font-style:italic; font-weight:700; font-size:36px; color:white; line-height:1; letter-spacing:-0.02em; }
+  .hero-text p  { font-size:12px; font-weight:500; color:rgba(255,255,255,0.85); margin-top:4px; }
+  .wave { position: absolute; bottom: -2px; left: 0; right: 0; }
+
+  /* Gold filter panel */
+  .gold-panel {
+    background: url('../assets/images/marina.jpg') center/cover no-repeat;
+  }
+  .gold-overlay { position: absolute; inset: 0; background: rgba(244,167,0,0.08); }
+  .gold-gradient { position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
+    background: linear-gradient(rgba(244,167,0,0) 0%, rgba(244,167,0,0.4) 100%); }
+  .gold-label { position: absolute; bottom: 16px; left: 0; right: 0; text-align:center;
+    font-family:'agenda', 'Nunito', sans-serif; font-weight:700; font-size:20px; color:white;
+    text-shadow: 0px 0px 24px rgba(106,72,0,0.5); }
+
+  /* Navy scrim panel */
+  .navy-panel {
+    background: url('../assets/images/riverside.jpg') center/cover no-repeat;
+  }
+  .navy-scrim { position: absolute; bottom: 0; left: 0; right: 0; height: 60%;
+    background: linear-gradient(rgba(3,48,89,0) 0%, rgb(3,48,89) 100%); }
+  .navy-label { position: absolute; bottom: 16px; left: 0; right: 0; text-align:center;
+    font-family:'agenda', 'Nunito', sans-serif; font-weight:700; font-size:20px; color:white; }
+
+  .desc-panel {
+    background: white; border: 1px solid #E3E3E3;
+    display: flex; flex-direction: column; gap: 8px; padding: 16px;
+    justify-content: center;
+  }
+  .desc-panel h4 { font-size: 11px; font-weight: 700; color: #033059; }
+  .desc-panel p  { font-size: 10px; font-weight: 500; color: #575757; line-height: 1.5; }
+</style>
+<link rel="stylesheet" href="https://use.typekit.net/pox0ckd.css"><!-- ⚠️ Remplacez pox0ckd par votre identifiant de kit Adobe Fonts (fonts.adobe.com → Web Projects) -->
+</head>
+<body>
+
+<div class="panel hero-panel">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h2>Bienvenue</h2>
+    <p>à Ferté Confluences, Destination Marne</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1920 128" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,64 C320,128 640,0 960,64 C1280,128 1600,0 1920,64 L1920,128 L0,128 Z" fill="white"/>
+  </svg>
+</div>
+
+<div class="panel gold-panel">
+  <div class="gold-overlay"></div>
+  <div class="gold-gradient"></div>
+  <div class="gold-label">Hover gold overlay</div>
+</div>
+
+<div class="panel navy-panel">
+  <div class="navy-scrim"></div>
+  <div class="navy-label">Navy text scrim</div>
+</div>
+
+<div class="panel desc-panel">
+  <h4>Photo treatments</h4>
+  <p><strong>Hero:</strong> Navy gradient top → transparent. Wave SVG divider at bottom.</p>
+  <p><strong>Gold filter:</strong> rgba(244,167,0,0.08) tint + gold gradient on hover.</p>
+  <p><strong>Navy scrim:</strong> Navy gradient for text readability on cards.</p>
+  <p style="margin-top:4px; color:#F4A700; font-weight:700; font-size:10px;">Text shadow: 0 0 24px rgba(106,72,0,0.5)</p>
+</div>
+
+</body>
+</html>

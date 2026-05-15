@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #575757; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+
+  /* Large search bar */
+  .search-bar {
+    display: flex; align-items: center; gap: 0;
+    height: 76px; border-radius: 48px;
+    background: white; overflow: hidden;
+    max-width: 440px;
+  }
+  .search-input {
+    flex: 1; height: 100%; padding: 0 24px;
+    font-size: 16px; font-weight: 500; color: #033059;
+    border: none; outline: none; background: transparent;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .search-input::placeholder { color: #AAAAAA; }
+  .search-btn {
+    width: 76px; height: 76px; background: #033059;
+    display: flex; align-items: center; justify-content: center;
+    border: none; cursor: pointer; flex-shrink: 0;
+    border-radius: 0 48px 48px 0;
+  }
+
+  /* Small inline search with text */
+  .search-inline {
+    display: flex; align-items: center;
+    height: 56px; border-radius: 48px;
+    background: white; overflow: hidden;
+    max-width: 340px; padding: 0 4px 0 20px;
+  }
+  .search-inline span { flex: 1; font-size: 14px; font-weight: 500; color: #AAAAAA; }
+  .search-inline-btn {
+    width: 48px; height: 48px; background: #033059;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    border: none; cursor: pointer;
+  }
+
+  .label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.45); }
+
+  /* Tag pills for filtering */
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag-filter {
+    height: 40px; padding: 0 20px; border-radius: 48px;
+    border: 1px solid rgba(255,255,255,0.4); color: white;
+    font-size: 13px; font-weight: 500; cursor: pointer;
+    display: flex; align-items: center; background: transparent;
+    transition: all 0.2s;
+  }
+  .tag-filter.active { background: white; color: #033059; border-color: white; }
+</style>
+</head>
+<body>
+
+<div class="label">Search bar — Large hero</div>
+<div class="search-bar">
+  <input class="search-input" type="text" placeholder="Rechercher une activité…">
+  <button class="search-btn">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+  </button>
+</div>
+
+<div class="label" style="margin-top:4px;">Search — Compact</div>
+<div class="search-inline">
+  <span>01 42 86 47 23</span>
+  <button class="search-inline-btn">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+  </button>
+</div>
+
+<div class="label" style="margin-top:4px;">Filter tags</div>
+<div class="tags">
+  <button class="tag-filter active">Toutes</button>
+  <button class="tag-filter">Nautisme</button>
+  <button class="tag-filter">Culture</button>
+  <button class="tag-filter">Famille</button>
+  <button class="tag-filter">Gastronomie</button>
+</div>
+
+</body>
+</html>

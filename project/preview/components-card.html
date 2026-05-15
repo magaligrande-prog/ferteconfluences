@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #FAFAFA; padding: 24px; display: flex; gap: 24px; align-items: flex-start; }
+
+  .card {
+    width: 300px; border-radius: 24px; overflow: hidden;
+    background: #AAAAAA; flex-shrink: 0;
+  }
+  .card-image {
+    width: 100%; height: 200px;
+    background: url('../assets/images/marina.jpg') center/cover no-repeat;
+    position: relative;
+  }
+  .card-image .heart {
+    position: absolute; top: 14px; right: 14px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center;
+  }
+  .card-image .tags {
+    position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 20px;
+    display: flex; gap: 8px;
+  }
+  .tag {
+    height: 34px; padding: 0 16px; border-radius: 48px;
+    border: 1px solid white; font-size: 12px; font-weight: 500;
+    color: white; display: flex; align-items: center;
+    background: rgba(3,48,89,0.15); backdrop-filter: blur(4px);
+  }
+  .card-body {
+    background: #033059; padding: 20px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .card-category { font-size: 12px; font-weight: 700; color: white; margin-bottom: 6px; }
+  .card-title { font-size: 17px; font-weight: 500; color: white; line-height: 1.3; }
+  .arrow-circle {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.4);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  /* Hover card */
+  .card-hover .card-image { position: relative; }
+  .card-hover .card-image::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(rgba(244,167,0,0) 0%, rgba(244,167,0,0.4) 100%);
+  }
+
+  .desc { flex: 1; }
+  .desc h4 { font-size: 13px; font-weight: 700; color: #033059; margin-bottom: 6px; }
+  .desc p  { font-size: 11px; font-weight: 500; color: #575757; line-height: 1.6; }
+</style>
+<link rel="stylesheet" href="https://use.typekit.net/pox0ckd.css"><!-- ⚠️ Remplacez pox0ckd par votre identifiant de kit Adobe Fonts (fonts.adobe.com → Web Projects) -->
+</head>
+<body>
+
+<!-- Default card -->
+<div class="card">
+  <div class="card-image">
+    <div class="heart">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    </div>
+    <div class="tags">
+      <span class="tag">Amarrage</span>
+      <span class="tag">Équipement</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <div>
+      <div class="card-category">Le Blog</div>
+      <div class="card-title">Les bonnes pratiques du plaisancier</div>
+    </div>
+    <div class="arrow-circle">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- Hover state -->
+<div class="card card-hover">
+  <div class="card-image">
+    <div class="heart">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#F4A700" stroke="#F4A700" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    </div>
+    <div class="tags">
+      <span class="tag">Amarrage</span>
+      <span class="tag">Équipement</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <div>
+      <div class="card-category">Le Blog</div>
+      <div class="card-title" style="text-decoration:underline;">Les bonnes pratiques du plaisancier</div>
+    </div>
+    <div class="arrow-circle">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</div>
+
+<div class="desc">
+  <h4>Article Card</h4>
+  <p>Image (432×377px) with tag pills overlay. Navy footer bar with category label, title, and arrow-circle. On hover: golden gradient on image; title underlined.</p>
+  <p style="margin-top:8px; color:#AAAAAA;">Border-radius: 24px<br>Footer bg: #033059<br>Tag: 1px solid white, pill</p>
+</div>
+
+</body>
+</html>

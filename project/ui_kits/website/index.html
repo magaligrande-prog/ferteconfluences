@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferté Confluences — UI Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Montserrat', sans-serif; background: white; overflow-x: hidden; }
+  button { font-family: 'Montserrat', sans-serif; }
+  input  { font-family: 'Montserrat', sans-serif; }
+  h1, h2, h3 { margin: 0; }
+  * { -webkit-font-smoothing: antialiased; }
+
+  /* Tweaks panel */
+  #tweaks-panel {
+    display: none; position: fixed; bottom: 80px; right: 24px;
+    background: white; border-radius: 16px; padding: 20px 24px;
+    box-shadow: 0 8px 40px rgba(3,48,89,0.18); z-index: 999;
+    width: 260px; border: 1px solid #E3E3E3;
+  }
+  #tweaks-panel.open { display: block; }
+  #tweaks-panel h4 { font-size: 13px; font-weight: 700; color: #033059; margin-bottom: 16px; }
+  .tweak-row { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .tweak-label { font-size: 11px; font-weight: 600; color: #AAAAAA; text-transform: uppercase; letter-spacing: 0.05em; }
+  .tweak-options { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tweak-btn {
+    height: 32px; padding: 0 14px; border-radius: 48px; cursor: pointer;
+    font-size: 12px; font-weight: 500; font-family: 'Montserrat',sans-serif;
+    border: 1px solid #E3E3E3; background: white; color: #575757;
+    transition: all 0.15s;
+  }
+  .tweak-btn.active { background: #033059; color: white; border-color: #033059; }
+  .swatch { width: 28px; height: 28px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: all 0.15s; flex-shrink: 0; }
+  .swatch.active { border-color: #033059; transform: scale(1.15); }
+</style>
+<link rel="stylesheet" href="https://use.typekit.net/pox0ckd.css"><!-- ⚠️ Remplacez pox0ckd par votre identifiant de kit Adobe Fonts (fonts.adobe.com → Web Projects) -->
+</head>
+
+<body>
+<div id="root"></div>
+
+<!-- Tweaks panel -->
+<div id="tweaks-panel">
+  <h4>⚙ Tweaks</h4>
+  <div class="tweak-row">
+    <div class="tweak-label">Page</div>
+    <div class="tweak-options" id="page-switcher"></div>
+  </div>
+  <div class="tweak-row">
+    <div class="tweak-label">Accent Color</div>
+    <div class="tweak-options" id="color-picker"></div>
+  </div>
+  <div class="tweak-row">
+    <div class="tweak-label">Font style</div>
+    <div class="tweak-options" id="font-switcher"></div>
+  </div>
+</div>
+
+<!-- Load components -->
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel" src="HomePage.jsx"></script>
+<script type="text/babel" src="InnerPages.jsx"></script>
+
+<!-- Main App -->
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "page": "home",
+  "accentColor": "#F4A700",
+  "fontStyle": "rounded"
+}/*EDITMODE-END*/;
+
+const App = () => {
+  const [page, setPage] = React.useState(TWEAK_DEFAULTS.page || 'home');
+  const [accent, setAccent] = React.useState(TWEAK_DEFAULTS.accentColor || '#F4A700');
+
+  const navigate = (p) => {
+    setPage(p);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Tweaks panel wiring
+  React.useEffect(() => {
+    const pageSwitcher = document.getElementById('page-switcher');
+    const colorPicker  = document.getElementById('color-picker');
+    const fontSwitcher = document.getElementById('font-switcher');
+
+    const pages = [
+      { id: 'home', label: 'Accueil' },
+      { id: 'activities', label: 'Activités' },
+      { id: 'blog', label: 'Blog' },
+      { id: 'about', label: 'À propos' },
+    ];
+    pages.forEach(p => {
+      const btn = document.createElement('button');
+      btn.className = 'tweak-btn' + (page === p.id ? ' active' : '');
+      btn.textContent = p.label;
+      btn.setAttribute('data-page', p.id);
+      btn.onclick = () => { navigate(p.id); updatePageButtons(p.id); };
+      pageSwitcher.appendChild(btn);
+    });
+
+    const colors = ['#F4A700', '#D3E7F7', '#033059', '#E85D3B'];
+    colors.forEach(c => {
+      const sw = document.createElement('div');
+      sw.className = 'swatch' + (accent === c ? ' active' : '');
+      sw.style.background = c;
+      sw.title = c;
+      sw.onclick = () => {
+        setAccent(c);
+        document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+        sw.classList.add('active');
+        document.documentElement.style.setProperty('--fc-gold', c);
+        window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { accentColor: c } }, '*');
+      };
+      colorPicker.appendChild(sw);
+    });
+
+    ['Nunito (arrondi)', 'Montserrat (géo)'].forEach((label, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'tweak-btn' + (i === 0 ? ' active' : '');
+      btn.textContent = label;
+      btn.onclick = () => {
+        document.querySelectorAll('#font-switcher .tweak-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const family = i === 0 ? "'agenda', 'Nunito', sans-serif" : "'Montserrat',sans-serif";
+        document.documentElement.style.setProperty('--font-display', family);
+        window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { fontStyle: i === 0 ? 'rounded' : 'geo' } }, '*');
+      };
+      fontSwitcher.appendChild(btn);
+    });
+
+    // Tweaks protocol
+    window.addEventListener('message', e => {
+      if (e.data?.type === '__activate_edit_mode') {
+        document.getElementById('tweaks-panel').classList.add('open');
+      }
+      if (e.data?.type === '__deactivate_edit_mode') {
+        document.getElementById('tweaks-panel').classList.remove('open');
+      }
+    });
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+  }, []);
+
+  const updatePageButtons = (activeId) => {
+    document.querySelectorAll('#page-switcher .tweak-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-page') === activeId);
+    });
+  };
+
+  const renderPage = () => {
+    switch (page) {
+      case 'home':       return React.createElement(window.FCHomePage,       { onNavigate: navigate });
+      case 'activities': return React.createElement(window.FCActivitiesPage, { onNavigate: navigate });
+      case 'blog':       return React.createElement(window.FCBlogPage,        { onNavigate: navigate });
+      case 'about':      return React.createElement(window.FCAboutPage,       { onNavigate: navigate });
+      case 'port':       return React.createElement(window.FCAboutPage,       { onNavigate: navigate });
+      case 'events':     return React.createElement(window.FCActivitiesPage,  { onNavigate: navigate });
+      default:           return React.createElement(window.FCHomePage,        { onNavigate: navigate });
+    }
+  };
+
+  return React.createElement('div', null,
+    React.createElement(window.FCHeader, { currentPage: page, onNavigate: navigate }),
+    React.createElement('main', { style: { paddingTop: page === 'home' ? 0 : 0 } },
+      renderPage()
+    ),
+    React.createElement(window.FCFooter, { onNavigate: navigate })
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(App));
+</script>
+
+<template id="__bundler_thumbnail">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140">
+    <rect width="200" height="140" fill="#033059"/>
+    <circle cx="100" cy="56" r="10" stroke="white" stroke-width="3" fill="none"/>
+    <line x1="100" y1="36" x2="100" y2="47" stroke="white" stroke-width="3"/>
+    <line x1="100" y1="66" x2="100" y2="88" stroke="white" stroke-width="3"/>
+    <path d="M78 88 Q100 76 122 88" stroke="white" stroke-width="3" fill="none"/>
+    <line x1="78" y1="88" x2="70" y2="84" stroke="white" stroke-width="3"/>
+    <line x1="122" y1="88" x2="130" y2="84" stroke="white" stroke-width="3"/>
+    <line x1="83" y1="77" x2="117" y2="77" stroke="white" stroke-width="3"/>
+    <text x="100" y="115" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" letter-spacing="2">FERTÉ CONFLUENCES</text>
+  </svg>
+</template>
+</body>
+</html>

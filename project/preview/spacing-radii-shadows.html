@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #FAFAFA; padding: 20px 24px; }
+  .row { display: flex; gap: 12px; align-items: center; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+  .box { background: #033059; width: 72px; height: 72px; }
+  .val  { font-size: 11px; font-weight: 700; color: #033059; }
+  .name { font-size: 10px; font-weight: 500; color: #AAAAAA; }
+  .divider { width: 1px; height: 60px; background: #E3E3E3; }
+  .shadow-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .shadow-box { width: 80px; height: 48px; background: white; border-radius: 12px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="item"><div class="box" style="border-radius:8px;"></div><div class="val">8px</div><div class="name">--radius-sm</div></div>
+  <div class="item"><div class="box" style="border-radius:24px;"></div><div class="val">24px</div><div class="name">--radius-md</div></div>
+  <div class="item"><div class="box" style="border-radius:32px;"></div><div class="val">32px</div><div class="name">--radius-lg</div></div>
+  <div class="item"><div class="box" style="border-radius:48px;"></div><div class="val">48px</div><div class="name">--radius-pill</div></div>
+  <div class="item"><div class="box" style="border-radius:50%;"></div><div class="val">50%</div><div class="name">--radius-circle</div></div>
+  <div class="divider"></div>
+  <div class="shadow-item"><div class="shadow-box" style="box-shadow:0px 0px 24px 0px rgba(106,72,0,0.5);"></div><div class="val" style="font-size:10px;">Text protect</div><div class="name">shadow-text-protection</div></div>
+  <div class="shadow-item"><div class="shadow-box" style="box-shadow:0px 0px 32px 0px rgba(244,167,0,0.3); border:1px solid #F4A700;"></div><div class="val" style="font-size:10px;">Hover gold</div><div class="name">shadow-hover-gold</div></div>
+  <div class="shadow-item"><div class="shadow-box" style="box-shadow:0px 4px 24px 0px rgba(3,48,89,0.15);"></div><div class="val" style="font-size:10px;">Overlay</div><div class="name">shadow-overlay-md</div></div>
+</div>
+</body>
+</html>

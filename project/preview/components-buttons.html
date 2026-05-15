@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #575757; padding: 24px; }
+  .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .label { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.06em; width: 100%; margin-top: 16px; }
+  .label:first-child { margin-top: 0; }
+
+  /* Pill CTA — outline navy */
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 8px;
+    height: 52px; padding: 0 32px;
+    border-radius: 48px; border: 1px solid #033059;
+    font-size: 16px; font-weight: 500; color: #033059;
+    background: white; cursor: pointer; white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+  .btn-outline:hover { border-color: #F4A700; box-shadow: 0 0 32px rgba(244,167,0,0.3); }
+
+  /* Pill CTA — outline white (on dark) */
+  .btn-outline-white {
+    display: inline-flex; align-items: center;
+    height: 52px; padding: 0 32px;
+    border-radius: 48px; border: 1px solid white;
+    font-size: 16px; font-weight: 500; color: white;
+    background: transparent; cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  /* Category button */
+  .btn-category {
+    display: inline-flex; align-items: center; gap: 10px;
+    height: 84px; padding: 0 32px;
+    border-radius: 48px; background: white;
+    font-size: 20px; font-weight: 700; color: #033059;
+    cursor: pointer; white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+  .btn-category:hover { border: 1px solid #F4A700; box-shadow: 0 0 32px rgba(244,167,0,0.3); }
+  .btn-category .icon { width: 28px; height: 28px; }
+
+  /* Arrow circle button */
+  .btn-arrow {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: white; border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .btn-arrow:hover { background: #F4A700; }
+  .btn-arrow svg { width: 24px; height: 24px; }
+
+  /* Nav link */
+  .btn-nav {
+    font-size: 18px; font-weight: 500; color: white;
+    cursor: pointer; padding: 16px 0; position: relative;
+    display: inline-block;
+  }
+  .btn-nav.active::after {
+    content: ''; position: absolute; bottom: 8px; left: 0; right: 0;
+    height: 2px; background: white; border-radius: 1px;
+  }
+
+  /* Share/icon circle */
+  .btn-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    border: 1px solid #575757; background: transparent;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+  }
+</style>
+<link rel="stylesheet" href="https://use.typekit.net/pox0ckd.css"><!-- ⚠️ Remplacez pox0ckd par votre identifiant de kit Adobe Fonts (fonts.adobe.com → Web Projects) -->
+</head>
+<body>
+
+<div class="label">CTA — Outline pill</div>
+<div class="row">
+  <button class="btn-outline">Découvrir tout nos événements</button>
+  <button class="btn-outline">Découvrir nos engagements</button>
+  <button class="btn-outline-white">Voir plus</button>
+</div>
+
+<div class="label">Category nav — Hero pills (with icon)</div>
+<div class="row">
+  <button class="btn-category">
+    <svg class="icon" viewBox="0 0 28 28" fill="none" stroke="#033059" stroke-width="2"><path d="M4 20 Q14 12 24 20"/><rect x="1" y="20" width="26" height="4" rx="2"/><line x1="14" y1="4" x2="14" y2="12"/></svg>
+    Activités & loisirs
+  </button>
+  <button class="btn-category">
+    <svg class="icon" viewBox="0 0 28 28" fill="none" stroke="#033059" stroke-width="2"><circle cx="14" cy="12" r="4"/><line x1="14" y1="2" x2="14" y2="8"/><line x1="14" y1="16" x2="14" y2="26"/><line x1="4" y1="22" x2="24" y2="22"/></svg>
+    Port de plaisance
+  </button>
+  <button class="btn-category">
+    <svg class="icon" viewBox="0 0 28 28" fill="none" stroke="#033059" stroke-width="2"><rect x="4" y="6" width="20" height="18" rx="2"/><path d="M8 6V4"/><path d="M20 6V4"/><line x1="4" y1="12" x2="24" y2="12"/></svg>
+    Événements
+  </button>
+</div>
+
+<div class="label">Arrow navigation &amp; icon buttons</div>
+<div class="row">
+  <button class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#575757" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button class="btn-arrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#575757" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <div style="width:16px"></div>
+  <span class="btn-nav">Boutique</span>
+  <span class="btn-nav">Blog</span>
+  <span class="btn-nav active">Engagements</span>
+</div>
+
+</body>
+</html>

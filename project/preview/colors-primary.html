@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #FAFAFA; padding: 24px; }
+  .row { display: flex; gap: 12px; }
+  .swatch { flex: 1; border-radius: 12px; overflow: hidden; }
+  .color-block { height: 80px; }
+  .info { padding: 10px 12px; background: white; }
+  .name { font-size: 12px; font-weight: 700; color: #033059; }
+  .hex  { font-size: 11px; font-weight: 500; color: #717680; margin-top: 2px; }
+  .role { font-size: 10px; font-weight: 500; color: #AAAAAA; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="swatch">
+    <div class="color-block" style="background:#033059;"></div>
+    <div class="info"><div class="name">Bleu marine</div><div class="hex">#033059</div><div class="role">Primary</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color-block" style="background:#FFFFFF; border:1px solid #E3E3E3;"></div>
+    <div class="info"><div class="name">Blanc pur</div><div class="hex">#FFFFFF</div><div class="role">Primary</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color-block" style="background:#D3E7F7;"></div>
+    <div class="info"><div class="name">Bleu ciel</div><div class="hex">#D3E7F7</div><div class="role">Secondary</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color-block" style="background:#F4A700;"></div>
+    <div class="info"><div class="name">Jaune soleil</div><div class="hex">#F4A700</div><div class="role">Accent</div></div>
+  </div>
+</div>
+</body>
+</html>

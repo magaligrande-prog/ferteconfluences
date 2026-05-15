@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Montserrat', sans-serif; background: #888; }
+
+  .header {
+    width: 100%;
+    background: linear-gradient(rgb(3,48,89) 0%, rgba(3,48,89,0) 100%);
+    padding: 20px 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px;
+  }
+
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-item {
+    font-size: 14px; font-weight: 500; color: white;
+    cursor: pointer; padding: 8px 0; position: relative;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .nav-item.active::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px; background: white; border-radius: 1px;
+  }
+  .nav-item svg { opacity: 0.7; }
+
+  .logo {
+    display: flex; align-items: center; gap: 0;
+    flex-direction: column; text-align: center; color: white;
+  }
+  .logo-top { display: flex; align-items: center; gap: 8px; }
+  .logo-f {
+    font-size: 28px; font-weight: 700; color: white;
+    font-family: 'Montserrat', sans-serif; letter-spacing: -0.02em;
+  }
+  .logo-confluences {
+    font-size: 20px; font-weight: 600; color: white;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .logo-sub {
+    font-size: 9px; font-weight: 700; color: white;
+    letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px;
+    opacity: 0.8;
+  }
+
+  .header-right { display: flex; align-items: center; gap: 20px; }
+  .btn-header {
+    height: 40px; padding: 0 20px; border-radius: 48px;
+    border: 1px solid rgba(255,255,255,0.5);
+    font-size: 13px; font-weight: 600; color: white;
+    background: transparent; cursor: pointer; white-space: nowrap;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .lang { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.8); cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="header">
+  <nav class="nav-links">
+    <span class="nav-item active">
+      Activités & loisirs
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </span>
+    <span class="nav-item">Blog
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </span>
+    <span class="nav-item">Boutique
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </span>
+    <span class="nav-item">Engagements
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </span>
+  </nav>
+
+  <div class="logo">
+    <div class="logo-top">
+      <div style="display:flex;align-items:center;gap:4px;">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 22 Q14 10 24 22" stroke="white" stroke-width="2.5" fill="none"/><ellipse cx="14" cy="22" rx="10" ry="3" stroke="white" stroke-width="2" fill="none"/></svg>
+        <span class="logo-f">Ferté</span>
+      </div>
+      <span class="logo-confluences">Confluences</span>
+    </div>
+    <div class="logo-sub">Port loisirs de la Marne</div>
+  </div>
+
+  <div class="header-right">
+    <span class="nav-item">Qui sommes-nous ?
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </span>
+    <button class="btn-header">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Rechercher
+    </button>
+    <span class="lang">FR / EN</span>
+  </div>
+</div>
+</body>
+</html>
