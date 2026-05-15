@@ -1,0 +1,88 @@
+/*
+ * Ferté Confluences — Design System Tokens
+ * Agenda: Adobe Fonts kit pox0ckd (loaded in index.html)
+ * Montserrat: Google Fonts (loaded in index.html)
+ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Montserrat', sans-serif; background: white; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+:root {
+  /* Primary */
+  --fc-navy:         #033059;
+  --fc-navy-80:      rgba(3,48,89,0.80);
+  --fc-navy-45:      rgba(3,48,89,0.45);
+  --fc-navy-0:       rgba(3,48,89,0.00);
+
+  /* Neutral */
+  --fc-white:        #FFFFFF;
+  --fc-off-white:    #FAFAFA;
+  --fc-bg-light:     #F5F5F5;
+
+  /* Sky Blue */
+  --fc-sky:          #D3E7F7;
+  --fc-sky-mid:      #E9F3FB;
+
+  /* Gold */
+  --fc-gold:         #F4A700;
+  --fc-gold-dark:    #D99500;
+  --fc-gold-deep:    #5A3D00;
+  --fc-gold-30:      rgba(244,167,0,0.30);
+  --fc-gold-glow:    rgba(244,167,0,0.50);
+  --fc-gold-tint:    rgba(244,167,0,0.06);
+
+  /* Grays */
+  --fc-gray-dark:    #575757;
+  --fc-gray-mid:     #717680;
+  --fc-gray-muted:   #AAAAAA;
+  --fc-gray-border:  #E3E3E3;
+  --fc-gray-light:   #F1F1F1;
+
+  /* Semantic */
+  --color-bg:              var(--fc-white);
+  --color-bg-subtle:       var(--fc-off-white);
+  --color-bg-dark:         var(--fc-navy);
+  --color-bg-light:        var(--fc-sky);
+  --color-fg-primary:      var(--fc-navy);
+  --color-fg-body:         var(--fc-gray-dark);
+  --color-fg-muted:        var(--fc-gray-muted);
+  --color-fg-on-dark:      var(--fc-white);
+  --color-accent:          var(--fc-gold);
+  --color-border:          var(--fc-gray-border);
+
+  /* Typography */
+  --font-display:    'agenda', 'Nunito', sans-serif;
+  --font-body:       'Montserrat', sans-serif;
+  --fw-regular:      400;
+  --fw-medium:       500;
+  --fw-semibold:     600;
+  --fw-bold:         700;
+
+  /* Spacing */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  16px;
+  --space-4:  24px;
+  --space-5:  32px;
+  --space-6:  48px;
+  --space-7:  56px;
+  --space-8:  64px;
+  --space-9:  100px;
+
+  /* Radii */
+  --radius-sm:     8px;
+  --radius-md:     24px;
+  --radius-lg:     32px;
+  --radius-pill:   48px;
+  --radius-circle: 50%;
+
+  /* Shadows */
+  --shadow-text:       0px 0px 24px 0px rgba(106,72,0,0.50);
+  --shadow-gold-glow:  0px 0px 32px 0px rgba(244,167,0,0.30);
+  --shadow-overlay:    0px 4px 24px 0px rgba(3,48,89,0.15);
+
+  /* Transitions */
+  --transition-base: all 0.25s ease;
+  --transition-fast: all 0.15s ease;
+}
