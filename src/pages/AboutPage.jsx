@@ -33,8 +33,7 @@ export default function AboutPage() {
         img="/images/hero-2.jpg"
       />
 
-      {/* Mission */}
-      <div style={{ padding: '80px 80px 56px', textAlign: 'center' }}>
+      <div className="fc-about-mission" style={{ padding: '80px 80px 56px', textAlign: 'center' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <div style={{ fontFamily: 'agenda, Nunito, sans-serif', fontWeight: 700, fontStyle: 'italic', fontSize: 18, color: '#F4A700', marginBottom: 24, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
             Notre mission
@@ -45,8 +44,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Story + image */}
-      <div style={{ padding: '0 80px 80px', display: 'flex', gap: 48, alignItems: 'center' }}>
+      <div className="fc-about-story" style={{ padding: '0 80px 80px', display: 'flex', gap: 48, alignItems: 'center' }}>
         <div style={{ flex: 1 }}>
           <h2 style={{ fontFamily: 'agenda, Nunito, sans-serif', fontWeight: 700, fontSize: 40, color: '#033059', marginBottom: 24, lineHeight: 1.1 }}>
             Ferté Confluences – Port loisirs de la Marne
@@ -63,14 +61,13 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Values */}
-      <div style={{ background: '#F5F5F5', padding: '80px', borderRadius: '32px 32px 0 0' }}>
+      <div className="fc-about-values" style={{ background: '#F5F5F5', padding: '80px', borderRadius: '32px 32px 0 0' }}>
         <div style={{ textAlign: 'center', marginBottom: 56 }}>
           <h2 style={{ fontFamily: 'agenda, Nunito, sans-serif', fontWeight: 500, fontSize: 44, color: '#575757' }}>
             Nos valeurs
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
+        <div className="fc-about-vals-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
           {VALUES.map((v, i) => (
             <div key={i} style={{ background: 'white', borderRadius: 20, padding: '36px 40px', display: 'flex', gap: 24, alignItems: 'flex-start' }}>
               <div style={{ width: 56, height: 56, borderRadius: '50%', background: '#D3E7F7', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>

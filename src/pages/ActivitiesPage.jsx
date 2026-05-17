@@ -26,10 +26,9 @@ export default function ActivitiesPage() {
         img="/images/hero-2.jpg"
       />
 
-      {/* Filter bar */}
-      <div style={{ background: '#F5F5F5', padding: '16px 48px', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-        <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500, fontSize: 14, color: '#575757' }}>Affinez vos envies</span>
-        <div style={{ width: 1, height: 24, background: '#E3E3E3', margin: '0 8px' }} />
+      <div className="fc-activities-filter" style={{ background: '#F5F5F5', padding: '16px 48px', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
+        <span style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500, fontSize: 14, color: '#575757', whiteSpace: 'nowrap' }}>Affinez vos envies</span>
+        <div style={{ width: 1, height: 24, background: '#E3E3E3', margin: '0 4px', flexShrink: 0 }} />
         {FILTERS.map(f => (
           <button key={f} onClick={() => setActiveFilter(f)} style={{
             height: 40, padding: '0 20px', borderRadius: 48, cursor: 'pointer',
@@ -37,16 +36,15 @@ export default function ActivitiesPage() {
             background: activeFilter === f ? '#033059' : 'white',
             color: activeFilter === f ? 'white' : '#575757',
             border: activeFilter === f ? '1px solid #033059' : '1px solid #E3E3E3',
-            transition: 'all 0.2s',
+            transition: 'all 0.2s', whiteSpace: 'nowrap',
           }}>
             {f}
           </button>
         ))}
       </div>
 
-      {/* Grid */}
-      <div style={{ padding: '56px 48px 80px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+      <div className="fc-activities-content" style={{ padding: '56px 48px 80px' }}>
+        <div className="fc-3col-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
           {filtered.map((act, i) => (
             <div key={act._id}
               onMouseEnter={() => setHovered(i)}
