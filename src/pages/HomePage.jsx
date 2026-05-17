@@ -22,14 +22,14 @@ export default function HomePage() {
   const quickLinks = [
     { path: '/activites',  label: 'Activités & loisirs',   icon: <path d="M2 19 Q12 11 22 19 M2 22 h20 M12 6 v5" /> },
     { path: '/port',       label: 'Port de plaisance',      icon: <><circle cx="12" cy="8" r="3" /><line x1="12" y1="2" x2="12" y2="5" /><line x1="12" y1="11" x2="12" y2="22" /><line x1="4" y1="18" x2="20" y2="18" /></> },
-    { path: '/',           label: 'Hébergements insolites', icon: <><rect x="1" y="4" width="22" height="16" rx="3" /><path d="M1 10 h22" /></> },
+    { path: '/guinguette', label: 'Guinguette',             icon: <><rect x="1" y="4" width="22" height="16" rx="3" /><path d="M1 10 h22" /></> },
     { path: '/evenements', label: 'Événements',             icon: <><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4 M8 2v4 M3 10 h18" /></> },
   ]
 
   return (
     <div style={{ background: 'white' }}>
       {/* HERO */}
-      <div style={{ position: 'relative', height: '100vh', minHeight: 700, background: "url('/images/hero-port.jpg') center/cover no-repeat", overflow: 'hidden' }}>
+      <div style={{ position: 'relative', height: '100vh', minHeight: 700, background: "url('/images/photo-port-portrait.jpg') center/cover no-repeat", overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(217,149,0,0.06)' }} />
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 280, background: 'linear-gradient(rgb(3,48,89) 0%, rgba(3,48,89,0) 100%)' }} />
 
@@ -61,17 +61,12 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="fc-hero-watermark" style={{ position: 'absolute', right: 60, top: '25%', opacity: 0.12, pointerEvents: 'none' }}>
-          <svg width="520" height="520" viewBox="0 0 32 32" fill="none">
-            <circle cx="16" cy="8" r="3" stroke="white" strokeWidth="0.6" />
-            <line x1="16" y1="2" x2="16" y2="6" stroke="white" strokeWidth="0.6" />
-            <line x1="16" y1="11" x2="16" y2="26" stroke="white" strokeWidth="0.6" />
-            <path d="M7 26 Q16 19 25 26" stroke="white" strokeWidth="0.6" fill="none" />
-            <line x1="7" y1="26" x2="4" y2="24" stroke="white" strokeWidth="0.6" />
-            <line x1="25" y1="26" x2="28" y2="24" stroke="white" strokeWidth="0.6" />
-            <line x1="9" y1="17" x2="23" y2="17" stroke="white" strokeWidth="0.6" />
-          </svg>
-        </div>
+        <img
+          className="fc-hero-watermark"
+          src="/logo/icon-transparent-white.svg"
+          alt=""
+          style={{ position: 'absolute', right: 80, top: '22%', width: 480, opacity: 0.18, pointerEvents: 'none' }}
+        />
 
         <div style={{ position: 'absolute', bottom: -2, left: 0, right: 0 }}>
           <svg viewBox="0 0 1920 128" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '100%' }} preserveAspectRatio="none">
@@ -189,10 +184,10 @@ export default function HomePage() {
           </div>
           <div className="fc-vision-images" style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 24 }}>
             <div style={{ flex: 1, borderRadius: 24, overflow: 'hidden', minHeight: 200 }}>
-              <div style={{ width: '100%', height: '100%', background: "url('/images/hero-2.jpg') center/cover no-repeat", minHeight: 220 }} />
+              <div style={{ width: '100%', height: '100%', background: "url('/images/photo-marina-landscape.jpg') center/cover no-repeat", minHeight: 220 }} />
             </div>
             <div style={{ flex: 1, borderRadius: 24, overflow: 'hidden' }}>
-              <div style={{ width: '100%', height: '100%', background: "url('/images/activities.png') center/cover no-repeat", minHeight: 220 }} />
+              <div style={{ width: '100%', height: '100%', background: "url('/images/photo-port-trees.jpg') center/cover no-repeat", minHeight: 220 }} />
             </div>
           </div>
         </div>

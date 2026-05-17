@@ -23,7 +23,7 @@ export default function ActivitiesPage() {
         title="Activités & loisirs"
         subtitle="Plaisirs de l'eau et de la nature"
         breadcrumb="Activités & loisirs"
-        img="/images/hero-2.jpg"
+        img="/images/photo-marina-landscape.jpg"
       />
 
       <div className="fc-activities-filter" style={{ background: '#F5F5F5', padding: '16px 48px', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>

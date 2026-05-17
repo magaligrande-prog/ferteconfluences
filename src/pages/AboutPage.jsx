@@ -30,7 +30,7 @@ export default function AboutPage() {
         title="Qui sommes-nous ?"
         subtitle={null}
         breadcrumb="Qui sommes-nous ?"
-        img="/images/hero-2.jpg"
+        img="/images/photo-marina-landscape.jpg"
       />
 
       <div className="fc-about-mission" style={{ padding: '80px 80px 56px', textAlign: 'center' }}>
@@ -57,7 +57,7 @@ export default function AboutPage() {
           </p>
         </div>
         <div style={{ flex: 1, borderRadius: 28, overflow: 'hidden', height: 400 }}>
-          <div style={{ width: '100%', height: '100%', background: "url('/images/marina.jpg') center/cover no-repeat" }} />
+          <div style={{ width: '100%', height: '100%', background: "url('/images/photo-le-minot.jpg') center/cover no-repeat" }} />
         </div>
       </div>
 

@@ -17,12 +17,12 @@ export default function BlogPage() {
         title="Le Blog"
         subtitle="Actualités, conseils & inspirations"
         breadcrumb="Blog"
-        img="/images/hero-2.jpg"
+        img="/images/photo-marina-landscape.jpg"
       />
 
       <div className="fc-blog-featured-wrap" style={{ padding: '56px 48px 0' }}>
         <div className="fc-blog-featured-inner" style={{ borderRadius: 28, overflow: 'hidden', display: 'flex', height: 380, cursor: 'pointer' }}>
-          <div className="fc-blog-featured-img" style={{ flex: 1, background: `url(${getImageUrl(featured?.image, '/images/hero-port.jpg')}) center/cover no-repeat`, position: 'relative' }}>
+          <div className="fc-blog-featured-img" style={{ flex: 1, background: `url(${getImageUrl(featured?.image, '/images/photo-port-portrait.jpg')}) center/cover no-repeat`, position: 'relative' }}>
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(rgba(3,48,89,0) 40%, rgba(3,48,89,0.7) 100%)' }} />
           </div>
           <div style={{ flex: 1, background: '#033059', padding: '48px 56px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
